@@ -22,14 +22,14 @@ class StatusFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val riwayatViewModel =
+        val statusViewModel =
             ViewModelProvider(this).get(StatusViewModel::class.java)
 
         _binding = FragmentStatsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.textStatus1
-        riwayatViewModel.text.observe(viewLifecycleOwner) {
+        statusViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root
